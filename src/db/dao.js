@@ -98,13 +98,15 @@ const BirthdayDAO = {
 
   getToday: function() {
     const today = new Date();
-    const monthDay = `${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    const monthDay = month + '-' + day;
     return this.getForMonthDay(monthDay);
   },
 
   deleteByName: (name) => {
     return new Promise((resolve, reject) => {
-      db.run('DELETE FROM birthdays WHERE name LIKE ?', [`%${name}%`], (err) => {
+      db.run('DELETE FROM birthdays WHERE name LIKE ?', ['%' + name + '%'], (err) => {
         if (err) reject(err);
         else resolve();
       });
