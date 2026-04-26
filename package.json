@@ -1,0 +1,34 @@
+{
+  "name": "phone-private-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node tests/supervisor.js",
+    "test:system": "node test-system.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.1",
+    "googleapis": "^171.4.0",
+    "imap-simple": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mailparser": "^3.9.8",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.6",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.2.1",
+    "eslint-plugin-security": "^4.0.0",
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2"
+  }
+}
